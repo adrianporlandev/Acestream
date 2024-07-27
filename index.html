@@ -10,7 +10,29 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: black;
         }
+        /* Estilos para el modo oscuro */
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: #444;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #666;
+        }
+
         .container {
             max-width: 1200px;
             margin: auto;
@@ -18,10 +40,18 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        body.dark-mode .container {
+            background-color: #333;
+        }
+
         h1 {
             text-align: center;
             color: #333;
         }
+        body.dark-mode h1 {
+            color: #ddd;
+        }
+
         .link-category {
             margin-bottom: 20px;
         }
@@ -32,17 +62,27 @@
             margin: 0;
             font-size: 1.2em;
         }
+        body.dark-mode .link-category h2 {
+            background-color: #0056b3;
+        }
+
         .link-category ul {
             list-style-type: none;
             padding: 0;
         }
+
         .link-category ul li {
             padding: 10px;
             border-bottom: 1px solid #ddd;
         }
+        body.dark-mode .link-category ul li {
+            border-bottom: 1px solid #555;
+        }
+
         .link-category ul li:last-child {
             border-bottom: none;
         }
+
         a {
             color: #007bff;
             text-decoration: none;
@@ -50,14 +90,16 @@
         a:hover {
             text-decoration: underline;
         }
+        body.dark-mode a {
+            color: #66aaff;
+        }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7382837232444223"
-    crossorigin="anonymous"></script>
+   
 </head>
 <body>
     <div class="container">
         <h1>Enlaces Acestream</h1>
-
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
         <!-- Categoría de Enlaces de LaLiga -->
         <div class="link-category">
             <h2>LaLiga</h2>
@@ -228,5 +270,10 @@
             <li><a href="acestream://dd9c56ef2f09753c59d9c2e2d2af31aeea6451c0">EuroSport 9 1080p</a></li>
         </ul>
     </div>
+    <script>
+        document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
